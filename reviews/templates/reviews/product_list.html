@@ -1,0 +1,17 @@
+{% extends 'reviews/base.html' %}
+{% block title %}Продукти{% endblock %}
+{% block content %}
+<h1>Список продуктів</h1>
+{% if products %}
+<div class="grid">
+    {% for product in products %}
+    <article class="card">
+        <h2><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h2>
+        <p>{{ product.description }}</p>
+        <strong>{{ product.price }} грн</strong>
+        <a class="button" href="{% url 'product_detail' product.pk %}">Переглянути та залишити відгук</a>
+    </article>
+    {% endfor %}
+</div>
+{% else %}<p>Продуктів поки немає. Додайте їх через <a href="/admin/">адмін-панель</a>.</p>{% endif %}
+{% endblock %}

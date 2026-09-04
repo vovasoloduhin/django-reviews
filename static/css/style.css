@@ -1,0 +1,16 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: #f5f7fb; color: #222; }
+a { color: #2457c5; text-decoration: none; }
+a:hover { text-decoration: underline; }
+.header { padding: 18px 7%; background: #1f2937; }
+.header a { color: white; font-weight: 700; font-size: 20px; }
+.container { width: min(1000px, 90%); margin: 35px auto; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.card, .product, .review, .form { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.card { display: flex; flex-direction: column; gap: 12px; }
+.button, button { display: inline-block; border: 0; border-radius: 8px; padding: 10px 14px; background: #2457c5; color: white; cursor: pointer; }
+.form { max-width: 650px; margin-bottom: 30px; }
+.form input, .form textarea, .form select { width: 100%; padding: 10px; border: 1px solid #ccd3df; border-radius: 7px; }
+.review { margin: 12px 0; }
+.price { font-size: 24px; font-weight: 700; }
+.errorlist { color: #b42318; }

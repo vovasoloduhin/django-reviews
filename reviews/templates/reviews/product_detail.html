@@ -1,0 +1,27 @@
+{% extends 'reviews/base.html' %}
+{% block title %}{{ product.name }}{% endblock %}
+{% block content %}
+<a href="{% url 'product_list' %}">← До списку продуктів</a>
+<section class="product">
+    <h1>{{ product.name }}</h1>
+    <p>{{ product.description }}</p>
+    <p class="price">{{ product.price }} грн</p>
+</section>
+<section>
+    <h2>Залишити відгук</h2>
+    <form method="post" class="form">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Надіслати відгук</button>
+    </form>
+</section>
+<section>
+    <h2>Відгуки</h2>
+    {% for review in reviews %}
+    <article class="review">
+        <div><strong>{{ review.author }}</strong> — <span>{{ review.rating }}/5</span></div>
+        <p>{{ review.text }}</p>
+    </article>
+    {% empty %}<p>Відгуків ще немає. Будьте першим!</p>{% endfor %}
+</section>
+{% endblock %}
